@@ -29,7 +29,17 @@ def number_of_customers_per_state(customers):
     }
     """
     # Write your code here
-    pass
+    newlist = {}
+    z = 0
+    for key in customers:
+        if customers[key] == None:
+            pass
+        else:
+            newlist[key] = z
+            for key in customers[key]:
+                z += 1
+    return newlist
+            
 
 
 class NumberOfCustomersPerStateTestCase(unittest.TestCase):
