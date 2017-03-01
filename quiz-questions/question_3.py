@@ -39,7 +39,25 @@ def eldest_customer_per_state(customers):
     }
     """
     # Write your code here
-    pass
+    newdict = {}
+    newlist = []
+    probablynotneeded = []
+    z=0
+    for key in customer:
+        newdict[key] = {}
+        for value in customer[age]:
+            newlist.append(value)
+    for i in range(0,len(newlist)):
+        for x in range(i +1, len(newlist)):
+            if newlist[i] > newlist[x]:
+                probablynotneeded.append(newlist[i])
+    for key in customer:
+        for value in customer[key][age]:
+            if value in probablynotneeded:
+                newdict[key] = customer[key]
+    return newdict    
+        
+    
 
 
 class EldestCustomerTestCase(unittest.TestCase):
